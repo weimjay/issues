@@ -18,3 +18,12 @@ export async function POST(req) {
 
 }
 
+export async function PUT(req) {
+  mongoose.connect(process.env.MONGO_URI);
+  const {_id, ...data} = await req.json();
+
+  const res = await Issue.findByIdAndUpdate(_id, data);
+
+  return Response.json(res);
+}
+

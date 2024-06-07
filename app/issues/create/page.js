@@ -14,8 +14,6 @@ export default function NewIssuePage() {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data),
     })
-    console.log(res);
-
   }
 
   return (

@@ -19,7 +19,7 @@ export default function IssuesPage() {
       <div className="text-2xl mb-4">Issues</div>
       {issues?.length > 0 && issues.map(issue => (
         <div className="flex">
-          <Link href={'/issues/'+issue.id} className="text-blue-500 " key={issue.id}>{issue.id} {issue.title}</Link>
+          <Link href={'/issues/'+issue._id} className="text-blue-500 " key={issue._id}>{issue.title}</Link>
         </div>
       ))}
     </section>
