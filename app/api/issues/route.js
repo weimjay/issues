@@ -27,3 +27,13 @@ export async function PUT(req) {
   return Response.json(res);
 }
 
+export async function DELETE(req) {
+  mongoose.connect(process.env.MONGO_URI);
+  const {searchParams} = new URL(req.url);
+  const _id = searchParams.get('_id');
+
+  const res = await Issue.deleteOne({_id});
+
+  return Response.json(res);
+}
+
