@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input[type="text"] {
+    @apply block mb-3 rounded-xl;
+    @apply border p-2 border-gray-300;
+}
