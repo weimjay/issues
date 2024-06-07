@@ -26,7 +26,10 @@ export default function IssuesPage() {
 
   return (
     <section className="p-3">
-      <div className="text-2xl mb-4">Issues</div>
+      <div className="mb-4">
+        <span className="text-2xl mr-8">Issues</span>
+        <Link href={'/issues/create'} className="bg-blue-300 px-6 py-2 rounded-xl">Create</Link>
+      </div>
       {issues?.length > 0 && issues.map(issue => (
         <div className="flex gap-4 m-2 items-center">
           <Link href={'/issues/' + issue._id} className="text-blue-500" key={issue._id}>{issue.title}</Link>
