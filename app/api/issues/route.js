@@ -10,7 +10,7 @@ export async function GET(req) {
 
 export async function POST(req) {
   mongoose.connect(process.env.MONGO_URI);
-  const data = req.json();
+  const data = await req.json();
 
   const res = await Issue.create(data);
 
