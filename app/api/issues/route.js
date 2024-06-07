@@ -3,8 +3,15 @@ import {Issue} from "@/model/Issue";
 
 export async function GET(req) {
   mongoose.connect(process.env.MONGO_URI);
-  const data = await Issue.find();
 
+  const {searchParams} = new URL(req.url);
+  const _id = searchParams.get('_id');
+  let data;
+  if (_id?.length > 0) {
+    data = await Issue.findOne({_id});
+  } else {
+    data = await Issue.find();
+  }
   return Response.json(data);
 }
 

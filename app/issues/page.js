@@ -29,8 +29,8 @@ export default function IssuesPage() {
       <div className="text-2xl mb-4">Issues</div>
       {issues?.length > 0 && issues.map(issue => (
         <div className="flex gap-4 m-2 items-center">
-          <Link href={'/issues/'+issue._id} className="text-blue-500" key={issue._id}>{issue.title}</Link>
-
+          <Link href={'/issues/' + issue._id} className="text-blue-500" key={issue._id}>{issue.title}</Link>
+          <Link href={'/issues/edit/'+issue._id} className="bg-blue-300 px-3 py-1 rounded-xl">Edit</Link>
           <button onClick={() => handleDelete(issue._id)} className="bg-red-300 px-3 py-1 rounded-xl">Delete</button>
         </div>
       ))}
